@@ -1,0 +1,102 @@
+<wsdl:definitions
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://nbaws.vytzab.eif.viko.lt/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:ns2="http://schemas.xmlsoap.org/soap/http"
+	xmlns:ns1="http://nbaws.vytzab.eif.viko.lt" name="NbaWsImplService"
+	targetNamespace="http://nbaws.vytzab.eif.viko.lt/">
+	<wsdl:import
+		location="http://localhost:8080/nbaws/nbaWs?wsdl=NbaPortType.wsdl"
+		namespace="http://nbaws.vytzab.eif.viko.lt">
+	</wsdl:import>
+	<wsdl:binding name="NbaWsImplServiceSoapBinding"
+		type="ns1:NbaPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getRecord">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getRecord"
+				style="document" />
+			<wsdl:input name="getRecord">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getRecordResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAllPlayers">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getAllPlayers"
+				style="document" />
+			<wsdl:input name="getAllPlayers">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getAllPlayersResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createPlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/createPlayer"
+				style="document" />
+			<wsdl:input name="createPlayer">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="createPlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateRecord">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/updateRecord"
+				style="document" />
+			<wsdl:input name="updateRecord">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="updateRecordResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getPlayer"
+				style="document" />
+			<wsdl:input name="getPlayer">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getPlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deletePlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/deletePlayer"
+				style="document" />
+			<wsdl:input name="deletePlayer">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="deletePlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatePlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/updatePlayer"
+				style="document" />
+			<wsdl:input name="updatePlayer">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="updatePlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NbaWsImplService">
+		<wsdl:port binding="tns:NbaWsImplServiceSoapBinding"
+			name="NbaWsImplPort">
+			<soap:address
+				location="http://localhost:8080/nbaws/nbaWs" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
