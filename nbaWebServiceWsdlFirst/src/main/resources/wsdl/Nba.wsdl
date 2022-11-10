@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://nbaws.vytzab.eif.viko.lt"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NbaService"
+	targetNamespace="http://nbaws.vytzab.eif.viko.lt">
+
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://nbaws.vytzab.eif.viko.lt">
+
+			<xsd:complexType name="record">
+				<xsd:sequence>
+					<xsd:element name="gamesplayed" type="xsd:integer" />
+					<xsd:element name="wins" type="xsd:integer" />
+					<xsd:element name="losses" type="xsd:integer" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="player">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:integer" />
+					<xsd:element name="firstName" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="lastName" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="age" type="xsd:string" />
+					<xsd:element name="height" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="weight" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="nationality" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="status" type="xsd:string"
+						minOccurs="0" />
+					<xsd:element name="record" type="tns:record"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="getRecordRequest">
+				<xsd:sequence>
+					<xsd:element name="playerId" type="xsd:integer" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getRecordResponse">
+				<xsd:sequence>
+					<xsd:element name="record" type="tns:record" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="updateRecordRequest">
+				<xsd:sequence>
+					<xsd:element name="playerId" type="xsd:integer" />
+					<xsd:element name="record" type="tns:record" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="updateRecordResponse">
+				<xsd:sequence>
+					<xsd:element name="updateRecordResult"
+						type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="createPlayerRequest">
+				<xsd:sequence>
+					<xsd:element name="player" type="tns:player" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="createPlayerResponse">
+				<xsd:sequence>
+					<xsd:element name="createPlayerResult"
+						type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="deletePlayerRequest">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:integer" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="deletePlayerResponse">
+				<xsd:sequence>
+					<xsd:element name="deletePlayerResult"
+						type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getPlayerRequest">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:integer" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getPlayerResponse">
+				<xsd:sequence>
+					<xsd:element name="player" type="tns:player" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getAllPlayersRequest">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getAllPlayersResponse">
+				<xsd:sequence>
+					<xsd:element name="player" type="tns:player"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="updatePlayerRequest">
+				<xsd:sequence>
+					<xsd:element name="player" type="tns:player" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="updatePlayerResponse">
+				<xsd:sequence>
+					<xsd:element name="updatePlayerResult"
+						type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:element name="getRecordRequest"
+				type="tns:getRecordRequest" />
+			<xsd:element name="getRecordResponse"
+				type="tns:getRecordResponse" />
+			<xsd:element name="updateRecordRequest"
+				type="tns:updateRecordRequest" />
+			<xsd:element name="updateRecordResponse"
+				type="tns:updateRecordResponse" />
+
+			<xsd:element name="createPlayerRequest"
+				type="tns:createPlayerRequest" />
+			<xsd:element name="createPlayerResponse"
+				type="tns:createPlayerResponse" />
+			<xsd:element name="deletePlayerRequest"
+				type="tns:deletePlayerRequest" />
+			<xsd:element name="deletePlayerResponse"
+				type="tns:deletePlayerResponse" />
+			<xsd:element name="getPlayerRequest"
+				type="tns:getPlayerRequest" />
+			<xsd:element name="getPlayerResponse"
+				type="tns:getPlayerResponse" />
+			<xsd:element name="getAllPlayersRequest"
+				type="tns:getAllPlayersRequest" />
+			<xsd:element name="getAllPlayersResponse"
+				type="tns:getAllPlayersResponse" />
+			<xsd:element name="updatePlayerRequest"
+				type="tns:updatePlayerRequest" />
+			<xsd:element name="updatePlayerResponse"
+				type="tns:updatePlayerResponse" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="getRecordRequest">
+		<wsdl:part element="tns:getRecordRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getRecordResponse">
+		<wsdl:part element="tns:getRecordResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="updateRecordRequest">
+		<wsdl:part element="tns:updateRecordRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="updateRecordResponse">
+		<wsdl:part element="tns:updateRecordResponse"
+			name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="createPlayerRequest">
+		<wsdl:part element="tns:createPlayerRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="createPlayerResponse">
+		<wsdl:part element="tns:createPlayerResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="deletePlayerRequest">
+		<wsdl:part element="tns:deletePlayerRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="deletePlayerResponse">
+		<wsdl:part element="tns:deletePlayerResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getPlayerRequest">
+		<wsdl:part element="tns:getPlayerRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getPlayerResponse">
+		<wsdl:part element="tns:getPlayerResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getAllPlayersRequest">
+		<wsdl:part element="tns:getAllPlayersRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getAllPlayersResponse">
+		<wsdl:part element="tns:getAllPlayersResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="updatePlayerRequest">
+		<wsdl:part element="tns:updatePlayerRequest"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="updatePlayerResponse">
+		<wsdl:part element="tns:updatePlayerResponse"
+			name="parameters" />
+	</wsdl:message>
+
+	<wsdl:portType name="NbaPortType">
+
+		<wsdl:operation name="getRecord">
+			<wsdl:input message="tns:getRecordRequest"
+				name="getRecordRequest" />
+			<wsdl:output message="tns:getRecordResponse"
+				name="getRecordResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updateRecord">
+			<wsdl:input message="tns:updateRecordRequest"
+				name="updateRecordRequest" />
+			<wsdl:output message="tns:updateRecordResponse"
+				name="updateRecordResponse" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="createPlayer">
+			<wsdl:input message="tns:createPlayerRequest"
+				name="createPlayerRequest" />
+			<wsdl:output message="tns:createPlayerResponse"
+				name="createPlayerResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="deletePlayer">
+			<wsdl:input message="tns:deletePlayerRequest"
+				name="deletePlayerRequest" />
+			<wsdl:output message="tns:deletePlayerResponse"
+				name="deletePlayerResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getPlayer">
+			<wsdl:input message="tns:getPlayerRequest"
+				name="getPlayerRequest" />
+			<wsdl:output message="tns:getPlayerResponse"
+				name="getPlayerResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAllPlayers">
+			<wsdl:input message="tns:getAllPlayersRequest"
+				name="getAllPlayersRequest" />
+			<wsdl:output message="tns:getAllPlayersResponse"
+				name="getAllPlayersResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updatePlayer">
+			<wsdl:input message="tns:updatePlayerRequest"
+				name="updatePlayerRequest" />
+			<wsdl:output message="tns:updatePlayerResponse"
+				name="updatePlayerResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="NbaServiceSoapBinding"
+		type="tns:NbaPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getRecord">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getRecord" />
+			<wsdl:input name="getRecordRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getRecordResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateRecord">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/updateRecord" />
+			<wsdl:input name="updateRecordRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="updateRecordResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="createPlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/createPlayer" />
+			<wsdl:input name="createPlayerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="createPlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deletePlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/deletePlayer" />
+			<wsdl:input name="deletePlayerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="deletePlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getPlayer" />
+			<wsdl:input name="getPlayerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getPlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAllPlayers">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/getAllPlayers" />
+			<wsdl:input name="getAllPlayersRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getAllPlayersResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatePlayer">
+			<soap:operation
+				soapAction="http://nbaws.vytzab.eif.viko.lt/updatePlayer" />
+			<wsdl:input name="updatePlayerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="updatePlayerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="NbaService">
+		<wsdl:port binding="tns:NbaServiceSoapBinding"
+			name="NbaPort">
+			<soap:address
+				location="http://localhost:8080/wsdlfirstnbaws/services/nbaService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
