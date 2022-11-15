@@ -7,9 +7,19 @@ import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.transform.TransformerException;
+
+import org.apache.fop.apps.FOPException;
+
+import lt.viko.eif.vytzab.nbaws.entities.Nba;
 import lt.viko.eif.vytzab.nbaws.menu.Menu;
 import lt.viko.eif.vytzab.nbaws.methods.PlayerMethods;
 import lt.viko.eif.vytzab.nbaws.methods.RecordMethods;
+import lt.viko.eif.vytzab.nbaws.transformers.PojoToXmlConverter;
+import lt.viko.eif.vytzab.nbaws.transformers.XmlHtmlConverter;
+import lt.viko.eif.vytzab.nbaws.transformers.XmlPdfConverter;
+import lt.viko.eif.vytzab.nbaws.utilities.Mapper;
 import lt.viko.eif.vytzab.nbaws.utilities.Printer;
 
 public class NbaWsClient {
@@ -90,6 +100,48 @@ public class NbaWsClient {
 					UpdatePlayerResponse response = port.updatePlayer(updatePlayerRequest);
 
 					System.out.println(response.isUpdatePlayerResult());
+					break;
+				}
+				case 8: {
+					Menu.convertToHtmlMenu();
+					GetAllPlayersRequest getAllPlayersRequest = new GetAllPlayersRequest();
+					GetAllPlayersResponse response = port.getAllPlayers(getAllPlayersRequest);
+					Nba nba = new Nba();
+					Mapper.mapPlayers(nba, response);
+
+					try {
+						PojoToXmlConverter.transformToXML("src//main//resources//nba.xml", nba);
+					} catch (JAXBException e) {
+						System.out.println("Error!!! - " + e);
+					}
+
+					XmlHtmlConverter.convertToHTML();
+					System.out.println("File has been saved in src/main/resources/output");
+					break;
+				}
+				case 9: {
+					Menu.convertToPdfMenu();
+					GetAllPlayersRequest getAllPlayersRequest = new GetAllPlayersRequest();
+					GetAllPlayersResponse response = port.getAllPlayers(getAllPlayersRequest);
+					Nba nba = new Nba();
+					Mapper.mapPlayers(nba, response);
+
+					try {
+						PojoToXmlConverter.transformToXML("src//main//resources//nba.xml", nba);
+					} catch (JAXBException e) {
+						System.out.println("Error!!! - " + e);
+					}
+
+					try {
+						XmlPdfConverter.convertToPDF();
+					} catch (FOPException | IOException | TransformerException e) {
+						System.out.println("Error!!! - " + e);
+					}
+					System.out.println("File has been saved in src/main/resources/output");
+					break;
+				}
+				case 0: {
+					System.out.println("See you soon :)");
 					break;
 				}
 				default: {

@@ -16,6 +16,7 @@
 	<description>NBA Web Service Client</description>
 
 	<properties>
+		<fop.version>2.1</fop.version>
 		<java.version>17</java.version>
 	</properties>
 
@@ -43,6 +44,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>fop</artifactId>
+			<version>${fop.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -63,8 +80,7 @@
 							<sourceRoot>${project.build.directory}/generated</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/NbaClient.wsdl</wsdl>
-									<wsdlLocation>classpath:wsdl/NbaClient.wsdl</wsdlLocation>
+									<wsdl>http://localhost:8080/nbaws/nbaWs?wsdl</wsdl>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>

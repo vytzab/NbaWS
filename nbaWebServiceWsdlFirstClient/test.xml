@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nba>
+    <players>
+        <player>
+            <id>1</id>
+            <firstName>Vytautas</firstName>
+            <lastName>Zabielskas</lastName>
+            <age>29</age>
+            <height>180cm</height>
+            <weight>80kg</weight>
+            <nationality>Lietuvis</nationality>
+            <status>Active</status>
+            <record>
+                <gamesplayed>20</gamesplayed>
+                <wins>13</wins>
+                <losses>7</losses>
+            </record>
+        </player>
+        <player>
+            <id>2</id>
+            <firstName>Michael</firstName>
+            <lastName>Jordan</lastName>
+            <age>33</age>
+            <height>213</height>
+            <weight>123kg</weight>
+            <nationality>American</nationality>
+            <status>Retired</status>
+            <record>
+                <gamesplayed>130</gamesplayed>
+                <wins>111</wins>
+                <losses>19</losses>
+            </record>
+        </player>
+    </players>
+</nba>

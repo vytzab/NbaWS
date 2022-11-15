@@ -13,10 +13,13 @@ public class Menu {
 		System.out.println("|5. View a player's record.         |");
 		System.out.println("|6. Update a player's record.       |");
 		System.out.println("|7. Update a player.                |");
+		System.out.println("|8. Convert and output to HTML.     |");
+		System.out.println("|9. Convert and output to PDF.      |");
 		System.out.println("|                                   |");
 		System.out.println("|0. Exit.                           |");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter your choice and click enter:");
+		System.out.println("\n\n\n");
 	}
 
 	public static void viewPlayerMenu() {
@@ -24,18 +27,21 @@ public class Menu {
 		System.out.println("|----------View Player Menu---------|");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter the player ID and click enter:");
+		System.out.println("\n\n\n");
 	}
 
 	public static void viewAllPlayersMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|--------View All Players Menu------|");
 		System.out.println("|-----------------------------------|");
+		System.out.println("\n\n\n");
 	}
 
 	public static void addPlayerMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|---------Add Player Menu-----------|");
 		System.out.println("|-----------------------------------|");
+		System.out.println("\n\n\n");
 	}
 
 	public static void removePlayerMenu() {
@@ -43,6 +49,7 @@ public class Menu {
 		System.out.println("|---------Remove Player Menu--------|");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter the player ID and click enter:");
+		System.out.println("\n\n\n");
 	}
 
 	public static void viewRecordMenu() {
@@ -50,6 +57,7 @@ public class Menu {
 		System.out.println("|---------View Record Menu----------|");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter the player ID and click enter:");
+		System.out.println("\n\n\n");
 	}
 
 	public static void updateRecordMenu() {
@@ -57,6 +65,7 @@ public class Menu {
 		System.out.println("|--------Update Record Menu---------|");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter the player ID and click enter:");
+		System.out.println("\n\n\n");
 	}
 
 	public static void updatePlayerMenu() {
@@ -64,5 +73,20 @@ public class Menu {
 		System.out.println("|--------Update Player Menu---------|");
 		System.out.println("|-----------------------------------|");
 		System.out.println("|Please enter the player ID and click enter:");
+		System.out.println("\n\n\n");
+	}
+
+	public static void convertToHtmlMenu() {
+		System.out.println("|-----------------------------------|");
+		System.out.println("|---------Convert to HTML-----------|");
+		System.out.println("|-----------------------------------|");
+		System.out.println("\n\n\n");
+	}
+
+	public static void convertToPdfMenu() {
+		System.out.println("|-----------------------------------|");
+		System.out.println("|----------Convert to PDF-----------|");
+		System.out.println("|-----------------------------------|");
+		System.out.println("\n\n\n");
 	}
 }
