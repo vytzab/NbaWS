@@ -1,7 +1,13 @@
 package lt.viko.eif.vytzab.nbaws.menu;
 
+/**
+ * Class used to provide a basic GUI for the user.
+ */
 public class Menu {
 
+	/**
+	 * Displays the Main Menu to the console.
+	 */
 	public static void mainMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|------------Main Menu--------------|");
@@ -22,6 +28,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the View Player Menu to the console.
+	 */
 	public static void viewPlayerMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|----------View Player Menu---------|");
@@ -30,6 +39,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the View All Players Menu to the console.
+	 */
 	public static void viewAllPlayersMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|--------View All Players Menu------|");
@@ -37,6 +49,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Add Player Menu to the console.
+	 */
 	public static void addPlayerMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|---------Add Player Menu-----------|");
@@ -44,6 +59,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Remove Player Menu to the console.
+	 */
 	public static void removePlayerMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|---------Remove Player Menu--------|");
@@ -52,6 +70,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the View Record Menu to the console.
+	 */
 	public static void viewRecordMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|---------View Record Menu----------|");
@@ -60,6 +81,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Update Record Menu to the console.
+	 */
 	public static void updateRecordMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|--------Update Record Menu---------|");
@@ -68,6 +92,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Update Player Menu to the console.
+	 */
 	public static void updatePlayerMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|--------Update Player Menu---------|");
@@ -76,6 +103,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Convert to HTML Menu to the console.
+	 */
 	public static void convertToHtmlMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|---------Convert to HTML-----------|");
@@ -83,6 +113,9 @@ public class Menu {
 		System.out.println("\n\n\n");
 	}
 
+	/**
+	 * Displays the Convert to PDF Menu to the console.
+	 */
 	public static void convertToPdfMenu() {
 		System.out.println("|-----------------------------------|");
 		System.out.println("|----------Convert to PDF-----------|");

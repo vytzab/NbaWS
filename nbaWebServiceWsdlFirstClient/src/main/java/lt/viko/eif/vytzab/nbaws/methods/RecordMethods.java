@@ -7,8 +7,15 @@ import java.math.BigInteger;
 
 import lt.viko.eif.vytzab.nbaws.Record;
 
+/*
+ * Class for player methods.
+*/
 public class RecordMethods {
 
+	/*
+	 * Method for record creation, when receiving input from the user through the
+	 * command line.
+	 */
 	public static Record createRecord() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

@@ -9,11 +9,17 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+/*
+ * Class for converting XML objects to HTML.
+*/
 public class XmlHtmlConverter {
 
 	public static final String RESOURCES_DIR = "src//main//resources//";
 	public static final String OUTPUT_DIR = "src//main//resources//output//";
 
+	/**
+	 * Reads an xml file, converts the data to HTML and outputs it to a file.
+	 */
 	public static void convertToHTML() {
 		StreamSource xslSource = new StreamSource(RESOURCES_DIR + "//nbaHtml.xsl");
 		StreamSource xmlSource = new StreamSource(RESOURCES_DIR + "//nba.xml");

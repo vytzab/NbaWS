@@ -10,12 +10,18 @@ import org.springframework.context.annotation.Configuration;
 
 import lt.viko.eif.vytzab.nbaws.NbaWsImpl;
 
+/*
+ * Class used for configuration of the web service.
+*/
 @Configuration
 public class WebServiceConfig {
 
 	@Autowired
 	private Bus bus;
 
+	/*
+	 * Creates a web service endpoint to connect to.
+	 */
 	@Bean
 	public Endpoint endpoint() {
 		Endpoint endpoint = new EndpointImpl(bus, new NbaWsImpl());

@@ -7,6 +7,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+/*
+ * Class for converting POJO objects to XMl.
+*/
 public class PojoToXmlConverter {
 	private static JAXBContext jaxbContext;
 

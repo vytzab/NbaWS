@@ -7,17 +7,20 @@ import java.util.Set;
 
 import org.apache.cxf.feature.Features;
 
+/*
+ * Web Service implementation class.
+*/
 @Features(features = "org.apache.cxf.feature.LoggingFeature")
 public class NbaWsImpl implements NbaPortType {
 	private static Map<BigInteger, Player> league = new HashMap<BigInteger, Player>();
 
 	public NbaWsImpl() {
-		init();
 	}
 
-	public void init() {
-	}
-
+	/*
+	 * Creates a new player. Returns response, containing a boolean value, depending
+	 * on the success of the call.
+	 */
 	@Override
 	public CreatePlayerResponse createPlayer(CreatePlayerRequest request) {
 		CreatePlayerResponse response = new CreatePlayerResponse();
@@ -33,6 +36,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Get a player. Returns response, containing a <Player> object from the league
+	 * HashMap.
+	 */
 	@Override
 	public GetPlayerResponse getPlayer(GetPlayerRequest request) {
 		GetPlayerResponse response = new GetPlayerResponse();
@@ -43,6 +50,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Get all players. Returns response, containing all <Player> objects from the
+	 * league HashMap.
+	 */
 	@Override
 	public GetAllPlayersResponse getAllPlayers(GetAllPlayersRequest request) {
 		GetAllPlayersResponse response = new GetAllPlayersResponse();
@@ -54,6 +65,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Delete a player. Returns response, containing a boolean value, depending on
+	 * the success of the call.
+	 */
 	@Override
 	public DeletePlayerResponse deletePlayer(DeletePlayerRequest request) {
 		DeletePlayerResponse response = new DeletePlayerResponse();
@@ -69,6 +84,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Updates a player. Returns response, containing a boolean value, depending on
+	 * the success of the call.
+	 */
 	@Override
 	public UpdatePlayerResponse updatePlayer(UpdatePlayerRequest request) {
 		UpdatePlayerResponse response = new UpdatePlayerResponse();
@@ -85,6 +104,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Get a record. Returns response, containing a <Record> object from the
+	 * <Player> object from the league HashMap.
+	 */
 	@Override
 	public GetRecordResponse getRecord(GetRecordRequest request) {
 		GetRecordResponse response = new GetRecordResponse();
@@ -95,6 +118,10 @@ public class NbaWsImpl implements NbaPortType {
 		return response;
 	}
 
+	/*
+	 * Updates a record. Returns response, containing a boolean value, depending on
+	 * the success of the call.
+	 */
 	@Override
 	public UpdateRecordResponse updateRecord(UpdateRecordRequest request) {
 		UpdateRecordResponse response = new UpdateRecordResponse();

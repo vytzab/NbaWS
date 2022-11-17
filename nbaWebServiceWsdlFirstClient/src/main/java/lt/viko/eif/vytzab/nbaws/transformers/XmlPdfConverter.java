@@ -17,11 +17,17 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 
+/*
+ * Class for converting XML objects to PDF.
+*/
 public class XmlPdfConverter {
 
 	public static final String RESOURCES_DIR = "src//main//resources//";
 	public static final String OUTPUT_DIR = "src//main//resources//output//";
 
+	/**
+	 * Reads an xml file, converts the data to PDF and outputs it to a file.
+	 */
 	public static void convertToPDF() throws IOException, FOPException, TransformerException {
 		StreamSource xslSource = new StreamSource(RESOURCES_DIR + "//nbaPdf.xsl");
 		StreamSource xmlSource = new StreamSource(RESOURCES_DIR + "//nba.xml");

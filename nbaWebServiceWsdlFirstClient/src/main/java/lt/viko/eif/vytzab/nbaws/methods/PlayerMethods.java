@@ -7,8 +7,15 @@ import java.math.BigInteger;
 
 import lt.viko.eif.vytzab.nbaws.Player;
 
+/*
+ * Class for player methods.
+*/
 public class PlayerMethods {
 
+	/*
+	 * Method for user creation, when receiving input from the user through the
+	 * command line.
+	 */
 	public static Player createPlayer() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

@@ -7,6 +7,9 @@ import java.util.List;
 
 import lt.viko.eif.vytzab.nbaws.Player;
 
+/**
+ * Represents a league of players
+ */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Nba {
@@ -15,22 +18,37 @@ public class Nba {
 	@XmlElement(name = "player")
 	private List<Player> players = new ArrayList<>();
 
+	/**
+	 * Default constructor without any parameters.
+	 */
 	public Nba() {
 
 	}
 
+	/**
+	 * Returns the list of <Player>.
+	 */
 	public List<Player> getPlayers() {
 		return players;
 	}
 
+	/**
+	 * Sets a list of <Player> for the <Nba> object.
+	 */
 	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
 
+	/**
+	 * Adds a player to the list of <Player>.
+	 */
 	public void addPlayer(Player player) {
 		players.add(player);
 	}
 
+	/**
+	 * Formats and outputs information for the whole league
+	 */
 	@Override
 	public String toString() {
 		String organizationString = "";
